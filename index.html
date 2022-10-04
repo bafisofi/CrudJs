@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
+  <title>Company Info</title>
+</head>
+<body>
+   <header class="header">
+    <div class="header__logo">
+      <img src="img/logo.svg" alt="Europa Viajes Logo">
+    </div>
+   </header>
+   <main>
+    <div class="btn">
+      <p class="btn__content">Add new Company</p>
+      <button class="btn__modal" id="show-modal">+</button>
+    </div>
+      <div class="modal">
+        <div class="modal__close">&times;</div>
+        <h2 class="modal__title">Company Registration</h2>
+        <form class="form" name="" >
+          
+            <label for="company">Company Name</label>
+            <input type="text" id="company" name="company" placeholder="Company Name">
+         
+            <label for="contact">Contact Name</label>
+            <input type="text" id="contact" name="contact" placeholder="Contact Name">
+         
+            <label for="country">Country</label>
+            <input type="text" id="country" name="country" placeholder="Country">
+          
+            <label for="phone">Phone Number</label>
+            <input type="text" id="phone" name="phone" placeholder="Phone Number">
+          
+            <label for="phone">Email</label>
+            <input type="email" id="email" name="email" placeholder="Email">
+          
+          <div class="form__btn">
+            <button  type="submit">Save</button>
+            <button class="btn--close">Close</button>
+          </div>
+    </form>
+    <div id="message" >
+    </div>
+    </div>
+    <div class="company">
+      <table class="company__table" id="myTableId">
+        <tr  id="content">
+          <th class="company__name">Company Name</th>
+          <th class="company__contact">Contact Name</th>
+          <th class="company__country">Country</th>
+          <th class="company__phone">Phone Number</th>
+          <th class="company__phone">Email</th>
+          <th class="company__phone">Actions</th>
+        </tr>
+        <tbody >
+          <tr >
+            <td>Europa Viajes</td>
+            <td>Selçuk Baki</td>
+            <td>Turkey</td>
+            <td>00905372541267</td>
+            <td>selcuk@europaviajes.com</td>
+            <td>
+              <div class="company__actions">
+                <button >Edit</button>
+                <button >Delete</button>
+              </div>
+            </td>
+          </tr> 
+        </tbody>
+      </table>
+
+    </div>
+   </main>
+   <script src="index.js"></script>
+</body>
+</html>
