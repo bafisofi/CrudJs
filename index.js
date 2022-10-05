@@ -104,6 +104,7 @@ let data= {};
 let arrData= []
 let i=1;
 
+
 let acceptData=() => {
   action='add';
   data["key"]=i;
@@ -112,15 +113,30 @@ let acceptData=() => {
   data["country"]=country.value
   data["phone"]=phone.value
   data["email"]=email.value
-  createTable()
   i++;
   arrData.push(data)
+  if(arrData.length===1){
+    createHeading();
+    table.createTBody();
+  }
+  createTable()
  }
 
 
+ function createHeading(){
+  let arrHeader = ["Company Name", "Contact Name", "Country", "Phone Number", "Email", "Actions"];
+  let thead = table.createTHead();
+
+  arrHeader.forEach((element,index) =>{
+  thead.appendChild(document.createElement("th")).
+  appendChild(document.createTextNode(arrHeader[index]));
+  });
+
+  }
+
  let createTable =() =>{
-  let rowCount = table.rows.length;
-  let newRow = table.insertRow(rowCount);
+  let tableLength=table.rows.length;
+  let newRow = table.getElementsByTagName('tbody')[0].insertRow(tableLength);
   newRow.insertCell(0).innerHTML = data["company"];
   newRow.insertCell(1).innerHTML = data["contact"];
   newRow.insertCell(2).innerHTML = data["country"];
@@ -141,6 +157,9 @@ let deleteRow= (el)=> {
     table.deleteRow(row);
     const target = data["key"];
     const result = arrData.filter(element => element===target); 
+    if(table.rows.length<=0){
+      table.deleteTHead();
+    }  
 }
 
 let editRow= (e)=> {
